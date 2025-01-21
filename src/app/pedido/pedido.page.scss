@@ -1,0 +1,68 @@
+.custom-title {
+    font-weight: bold;
+    color: #FFA500;
+    text-align: center;
+    width: 100%;
+}
+
+/* Cambiar el color del toolbar */
+.ion-toolbar {
+  background-color: transparent; /* Sin color de fondo */
+  box-shadow: none; /* Eliminar cualquier sombra */
+}
+
+.footer-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+}
+
+/* Asegura que el fondo del icono sea transparente */
+ion-icon {
+  background: transparent !important; /* Asegura que el fondo del icono sea transparente */
+  padding: 0;                          /* Remueve cualquier relleno alrededor del icono */
+  margin: 0;                           /* Remueve cualquier margen extra */
+  box-shadow: none;                    /* Elimina sombras si las hay */
+}
+
+/* Si el icono está dentro de un ion-button o ion-item, asegúrate de que también no tenga fondo */
+ion-button, ion-item {
+  background: transparent !important;  /* Hace transparente el fondo del contenedor */
+}
+
+.social-icon {
+  font-size: 2rem;
+  color: #3b3b3b;
+  transition: transform 0.2s;
+}
+
+.social-icon:hover {
+  transform: scale(1.2);
+}
+
+ion-footer {
+  position: relative;
+  background-color: transparent;
+  background: linear-gradient(45deg, #ff0000, #ff7300, #a50770, #ff00f6, #8f00ff);
+  background-size: 400% 400%;
+  animation: gradientMove 10s ease infinite;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+ion-button:hover .social-icon {
+  transform: scale(1.2);
+  color: #ff007f;
+}

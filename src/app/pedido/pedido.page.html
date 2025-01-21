@@ -1,0 +1,74 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-title class="custom-title">Agregar Libros al Pedido</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content class="ion-padding">
+    <!-- Formulario para agregar un libro -->
+    <form (ngSubmit)="addBook()">
+      <ion-item>
+        <ion-label position="floating">Nombre del Libro</ion-label>
+        <ion-input [(ngModel)]="newBook.title" name="title" required></ion-input>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label position="floating">Autor</ion-label>
+        <ion-input [(ngModel)]="newBook.author" name="author" required></ion-input>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label position="floating">Año</ion-label>
+        <ion-input [(ngModel)]="newBook.year" name="year" type="number" required></ion-input>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label position="floating">Precio</ion-label>
+        <ion-input [(ngModel)]="newBook.price" name="price" type="number" required></ion-input>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label position="floating">Imagen</ion-label>
+        <ion-input [(ngModel)]="newBook.image" name="image" required></ion-input>
+      </ion-item>
+  
+      <ion-button expand="full" type="submit" color="success">Agregar al Pedido</ion-button>
+    </form>
+  
+    <!-- Mostrar libros ya agregados -->
+    <ion-list>
+      <ion-item *ngFor="let book of books">
+        <ion-card>
+          <img [src]="book.image" alt="{{ book.title }}">
+          <ion-card-header>
+            <ion-card-title>{{ book.title }}</ion-card-title>
+            <p>{{ book.author }} - {{ book.year }}</p>
+          </ion-card-header>
+          <ion-card-content>
+            <p>Precio: ${{ book.price }}</p>
+          </ion-card-content>
+        </ion-card>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+  
+  <ion-footer>
+    <ion-toolbar>
+      <div class="footer-buttons">
+        <ion-button href="https://www.instagram.com" target="_blank">
+          <ion-icon slot="icon-only" name="logo-instagram" class="social-icon"></ion-icon>
+        </ion-button>
+        <ion-button href="https://www.twitter.com" target="_blank">
+          <ion-icon slot="icon-only" name="logo-twitter" class="social-icon"></ion-icon>
+        </ion-button>
+        <ion-button href="https://www.tiktok.com" target="_blank">
+          <ion-icon slot="icon-only" name="logo-tiktok" class="social-icon"></ion-icon>
+        </ion-button>
+        <ion-button href="https://www.facebook.com" target="_blank">
+          <ion-icon slot="icon-only" name="logo-facebook" class="social-icon"></ion-icon>
+        </ion-button>
+      </div>
+    </ion-toolbar>
+  </ion-footer>
+  
+  

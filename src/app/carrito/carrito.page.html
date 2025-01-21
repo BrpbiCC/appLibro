@@ -1,0 +1,170 @@
+<!-- Menú -->
+<ion-menu side="end" contentId="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title  class="custom-title">Menú</ion-title>
+      <ion-buttons slot="end">
+        <!-- Ícono de cierre -->
+        <ion-button (click)="closeMenu()">
+          <ion-icon name="close-circle-outline"></ion-icon> <!-- Ícono de cierre -->
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content class="ion-padding">
+    <!--Opcion de Categoria-->
+    <ion-item button (click)="goToCategorias()">
+      <ion-icon slot="start" name="list-outline"></ion-icon>
+      <ion-label>Categorías</ion-label>
+    </ion-item>
+
+    <!-- Opción de Contacto -->
+    <ion-item button (click)="goToContacto()">
+      <ion-icon slot="start" name="mail-outline"></ion-icon>
+      <ion-label>Contacto</ion-label>
+    </ion-item>
+
+    <!-- Opción de Cerrar sesión -->
+    <ion-item button (click)="cerrarSesion()">
+      <ion-icon slot="start" name="log-out-outline"></ion-icon>
+      <ion-label>Cerrar sesión</ion-label>
+    </ion-item>
+
+    <!-- Información de contacto al final del menú -->
+    <div class="contact-info" style="margin-top: 20px; text-align: center;">
+      <ion-label>Correo: libriko&#64;contacto.com</ion-label><br>
+      <ion-label>Teléfono: +56 9 1234 5678</ion-label>
+    </div>
+  </ion-content>
+</ion-menu>
+
+<!-- Contenido Principal -->
+<ion-content class="ion-page" id="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-button (click)="goBack()">
+          <ion-icon name="arrow-undo-outline"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+      <ion-title class="custom-title">Carrito</ion-title>
+      <ion-buttons slot="end">
+        <ion-menu-button></ion-menu-button> <!-- Este botón abre el menú -->
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content class="ion-padding">
+    <!-- Lista de productos en el carrito -->
+    <ion-list>
+      <!-- Producto 1 -->
+      <ion-item>
+        <ion-label>
+          <h2>El mago de oz</h2>
+          <p>$9.000</p>
+        </ion-label>
+        <ion-buttons slot="end">
+          <!-- Ícono para eliminar -->
+          <ion-button fill="clear" (click)="eliminarProducto(1)">
+            <ion-icon name="remove-circle-outline"></ion-icon>
+          </ion-button>
+          <!-- Ícono para agregar -->
+          <ion-button fill="clear" (click)="agregarMas(1)">
+            <ion-icon name="add-circle-outline"></ion-icon>
+          </ion-button>
+          <!-- Ícono para favorito -->
+          <ion-button fill="clear" color="danger" (click)="marcarFavorito(1)">
+            <ion-icon name="heart-circle-outline"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+      </ion-item>
+  
+      <!-- Producto 2 -->
+      <ion-item>
+        <ion-label>
+          <h2>Libro de bill</h2>
+          <p>$11.000</p>
+        </ion-label>
+        <ion-buttons slot="end">
+          <!-- Ícono para eliminar -->
+          <ion-button fill="clear" (click)="eliminarProducto(2)">
+            <ion-icon name="remove-circle-outline"></ion-icon>
+          </ion-button>
+          <!-- Ícono para agregar -->
+          <ion-button fill="clear" (click)="agregarMas(2)">
+            <ion-icon name="add-circle-outline"></ion-icon>
+          </ion-button>
+          <!-- Ícono para favorito -->
+          <ion-button fill="clear" color="danger" (click)="marcarFavorito(2)">
+            <ion-icon name="heart-circle-outline"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+      </ion-item>
+  
+      <!-- Producto 3 -->
+      <ion-item>
+        <ion-label>
+          <h2>Los siete maridos de evelyn hugo</h2>
+          <p>$21.000</p>
+        </ion-label>
+        <ion-buttons slot="end">
+          <!-- Ícono para eliminar -->
+          <ion-button fill="clear" (click)="eliminarProducto(3)">
+            <ion-icon name="remove-circle-outline"></ion-icon>
+          </ion-button>
+          <!-- Ícono para agregar -->
+          <ion-button fill="clear" (click)="agregarMas(3)">
+            <ion-icon name="add-circle-outline"></ion-icon>
+          </ion-button>
+          <!-- Ícono para favorito -->
+          <ion-button fill="clear" color="danger" (click)="marcarFavorito(3)">
+            <ion-icon name="heart-circle-outline"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+      </ion-item>
+    </ion-list>
+  
+    <!-- Total del carrito -->
+    <ion-item>
+      <ion-label>Total</ion-label>
+      <ion-badge color="primary">$65.00</ion-badge>
+    </ion-item>
+  
+    <!-- Botones para continuar -->
+    <ion-button expand="block" color="secondary" (click)="seguirComprando()">Seguir Comprando</ion-button>
+    <ion-button expand="block" color="success" (click)="pagar()">Pagar</ion-button>
+  </ion-content>
+  
+  
+    <ion-toolbar>
+      <ion-buttons slot="end">
+        <ion-button (click)="vaciarCarrito()">
+          <ion-icon name="trash-outline"></ion-icon>
+          Vaciar Carrito
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+
+    <ion-progress-bar type="indeterminate" color="success"></ion-progress-bar>
+
+  <!-- Footer Social -->
+  <ion-footer>
+    <ion-toolbar>
+      <ion-buttons slot="start" class="footer-buttons">
+        <ion-button href="https://www.instagram.com" target="_blank">
+          <ion-icon slot="icon-only" name="logo-instagram" class="social-icon"></ion-icon>
+        </ion-button>
+        <ion-button href="https://www.twitter.com" target="_blank">
+          <ion-icon slot="icon-only" name="logo-twitter" class="social-icon"></ion-icon>
+        </ion-button>
+        <ion-button href="https://www.tiktok.com" target="_blank">
+          <ion-icon slot="icon-only" name="logo-tiktok" class="social-icon"></ion-icon>
+        </ion-button>
+        <ion-button href="https://www.facebook.com" target="_blank">
+          <ion-icon slot="icon-only" name="logo-facebook" class="social-icon"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-footer>
+</ion-content>

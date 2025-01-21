@@ -1,0 +1,49 @@
+<ion-header translucent="true">
+  <ion-toolbar>
+    <ion-title class="custom-title">
+      Libriko
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen="true">
+  <ion-card>
+    <img alt="Descripción de la imagen" src="https://www.ultraimagehub.com/wallpapers/tr:flp-false,gx-0.3,gy-0.8,q-75,rh-3264,rw-5824,th-1080,tw-1920/1272575733482520606.jpeg" />
+    <ion-card-content>
+      "Leer es una forma de escapar y encontrar"
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Formulario -->
+  <ion-list>
+    <ion-item>
+      <ion-input label="Usuario" label-placement="floating" placeholder="Enter text" [(ngModel)]="data.user"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input label="Contraseña" type="password" label-placement="floating" placeholder="Enter text" [(ngModel)]="data.pw"></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <ion-button expand="full" color="primary" (click)="goLogin()">Inicio</ion-button>
+</ion-content>
+
+<ion-progress-bar type="indeterminate" color="success"></ion-progress-bar>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-buttons slot="start" class="footer-buttons">
+      <ion-button href="https://www.instagram.com" target="_blank">
+        <ion-icon slot="icon-only" name="logo-instagram" class="social-icon"></ion-icon>
+      </ion-button>
+      <ion-button href="https://www.twitter.com" target="_blank">
+        <ion-icon slot="icon-only" name="logo-twitter" class="social-icon"></ion-icon>
+      </ion-button>
+      <ion-button href="https://www.tiktok.com" target="_blank">
+        <ion-icon slot="icon-only" name="logo-tiktok" class="social-icon"></ion-icon>
+      </ion-button>
+      <ion-button href="https://www.facebook.com" target="_blank">
+        <ion-icon slot="icon-only" name="logo-facebook" class="social-icon"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

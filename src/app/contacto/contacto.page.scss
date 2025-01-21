@@ -1,0 +1,78 @@
+.custom-title {
+    font-weight: bold; /* Letras más gruesas */
+    color: #FFA500;
+    text-align: center; /* Centrado del texto */
+    width: 100%; /* Asegura que el texto esté centrado completamente */
+  }
+  
+
+  .footer-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+  }
+  .social-icon {
+    font-size: 2rem; 
+    color: #3b3b3b;
+    transition: transform 0.2s;
+  }
+  
+  .social-icon:hover {
+    transform: scale(1.2); /* Efecto de agrandamiento al pasar el cursor */
+  }
+  
+  ion-footer {
+    position: relative;
+    background: linear-gradient(45deg, #ff0000, #ff7300, #a50770, #00c6ff, #ff00f6, #8f00ff);
+    background-size: 400% 400%;
+    animation: gradientMove 10s ease infinite; /* Animación del gradiente */
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+  }
+
+  @keyframes gradientMove {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  ion-button:hover .social-icon {
+    transform: scale(1.2);
+    color: #ff007f; /* Color brillante al pasar el ratón */
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .section-description {
+    font-size: 1rem;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #777;
+  }
+
+  ion-button {
+    margin-top: 20px;
+  }
+
+  .contact-info {
+    margin-top: 20px;
+    text-align: center;
+    color: #444; /* Puedes cambiar el color si lo deseas */
+  }
+  
+  .contact-info ion-label {
+    font-size: 14px; /* Ajusta el tamaño del texto */
+    display: block;
+    margin-bottom: 5px;
+  }
